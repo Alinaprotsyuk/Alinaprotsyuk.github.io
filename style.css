@@ -1,6 +1,8 @@
-body{
+*{
 	margin:0;
 	padding:0;
+}
+body{
 	font-family:"Bookman Old Style", sans-serif;
 	font-size:16pt;
 	background-image:url("images/background1.jpg");
@@ -15,6 +17,7 @@ header{
 	box-shadow: 0 0 5px 5px #DCDCDC;
 	background:url("images/header2.jpg") no-repeat;
 }
+
 
 a{
 	text-decoration:none;
@@ -40,7 +43,7 @@ a:active{
 .service,
 .photos,
 .review,
-.contact{
+.about_contacts{
 	width:1000px;
 	margin:10px auto;
 	border:1px solid #ae689e;
@@ -82,12 +85,13 @@ a:active{
 }
 
 .review{
-	height:350px;
+	height:550px;
 }
 
-.contact{
-	height:150px;
+.about_contacts{
+	height:500px;
 	text-align:center;
+	margin-bottom:50px;
 }
 
 .review form{
@@ -100,7 +104,7 @@ a:active{
 }
 .review fieldset{
 	width:500px;
-	margin:0 auto;
+	margin:50px auto;
 	color:#8b8a8b;
 }
 .photos img{
@@ -138,26 +142,26 @@ figcaption{
 }
 footer{
 	/*width:1000px;*/
-	min-height:70px;
-	margin:10px auto;
-	padding:20px 0;
+	min-height:85px;
+	padding:5px 100px;
 	border:1px solid #ae689e;
 	box-shadow: 0 0 5px 5px #DCDCDC;
 	background-color:#8b8a8b;
-	font-size:12pt;
+	font-size:10pt;
 }
 
-footer p{
+.about{
 	display:block;
 	float:left;
 	color:#814c75;
-	margin:0;
-	margin-left:100px;
 }
-
+footer p{
+	padding-top:10px;
+}
 footer p:nth-child(2){
-	border-top:2px solid black;
+	border-top:1px solid black;
 	text-align:center;
+	
 }
 
 /*.footer-nav-bar{
@@ -166,11 +170,9 @@ footer p:nth-child(2){
 	float:right;
 	margin-right:100px;
 }*/
-.services{
 
-}
 .service h2,
-.contact h2{
+.about_contacts h2{
 	margin:0;
 	padding:0;
 	font-size:14pt;
@@ -185,7 +187,7 @@ footer p:nth-child(2){
 	margin:0;
 	padding:0;
 	font-size:12pt;
-	color:black;
+	color:#8b8a8b;
 	padding:10px 10px;
 }
 
@@ -215,7 +217,8 @@ footer p:nth-child(2){
     margin:0;
 	display:block;
 	float:right;
-	margin-right:100px;
+	margin-right:10px;
+	margin-top:30px;
 	color:#8b8a8b;
 }
 .share  a{
@@ -247,4 +250,67 @@ footer p:nth-child(2){
 
 .social-tw {
     background-color: #73bfe6;
+}
+/*for reviews*/
+
+.comment {
+    position: relative;
+    margin-top: 30px; 
+    margin-right: 20px;
+    margin-left: 50px;
+	padding-bottom:50px;
+	border-bottom:1px solid black;
+	font-size:12pt;
+}
+
+.comment-avatar {
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 70px;
+    height: 70px;
+    background: #7f8c8c url("images/avatar.png") no-repeat;
+	background-size:70px;
+}
+
+.comment-author {
+    margin-bottom: 5px;
+    padding-left: 45px;
+    padding-right: 20px;
+    font-weight: bold;
+}
+
+.comment-text {
+    padding: 12px;
+    padding-left: 45px;
+    background-color: #f8f8f8;
+    border-bottom: 5px solid #e5e6e6;
+}
+
+.comment-date {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #bdc3c7;
+}
+
+.comment-reply {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: url("/assets/course14/reply.png") no-repeat 0 0;
+}
+
+.contact{
+	width:900px;
+	display:flex;
+	justify-content: space-around;
+	margin-top:50px;	
+}
+
+.contact img{
+	border-radius:30px;
+	box-shadow:10px 0 5px 5px silver;
+	
 }
