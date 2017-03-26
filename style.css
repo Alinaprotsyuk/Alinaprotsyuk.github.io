@@ -1,316 +1,88 @@
-*{
-	margin:0;
-	padding:0;
-}
-body{
-	font-family:"Bookman Old Style", sans-serif;
-	font-size:16pt;
-	background-image:url("images/background1.jpg");
-	background-repeat:repeat;
-}
-
-header{
-	width:1000px;
-	height:300px;
-	margin:0 auto;
-	border:1px solid #ae689e;
-	box-shadow: 0 0 5px 5px #DCDCDC;
-	background:url("images/header2.jpg") no-repeat;
-}
-
-
-a{
-	text-decoration:none;
-	margin-right:10px;
-	color:#814c75;
-}
-
-a:last-child{
-	margin-right:0;
-}
-
-a:hover,
-a:active{
-	color:#8b8a8b;
-}
-
-.nav-bar{
-	margin-top:270px;
-	text-align:center;
-}
-
-.albums,
-.service,
-.photos,
-.review,
-.about_contacts{
-	width:1000px;
-	margin:10px auto;
-	border:1px solid #ae689e;
-	box-shadow: 0 0 5px 5px #DCDCDC;
-	background-color:#ece9eb;
-	
-}
-
-.albums{
-	height:870px;
-}
-
-.service{
-	height:900px;
-}
-
-.photo-1{
-	height:7550px;
-}
-
-.photo-2{
-	height:3620px;
-}
-
-.photo-3{
-	height:7430px;
-}
-
-.photo-4{
-	height:1050px;
-}
-
-.photo-5{
-	height:10560px;
-}
-
-.photo-6{
-	height:11065px;
-}
-
-.review{
-	height:550px;
-}
-
-.about_contacts{
-	height:500px;
-	text-align:center;
-	margin-bottom:50px;
-}
-
-.review form{
-	margin:0;
-	padding:0;
-	padding:20px 20px;
-	line-height:1.5;
-	color:#ae689e;
-	font-size:14pt;
-}
-.review fieldset{
-	width:500px;
-	margin:50px auto;
-	color:#8b8a8b;
-}
-.photos img{
-	width:1000px;
-}
-.albums figure a:hover,
-.albums figure a:active{
-	filter:opacity(0.5);
-}
-
-figure{
-	width:300px;
-	min-height:100px;
-	padding: 5px;
-	display:block;
-	float:left;
-	border: 2px solid #ae689e;
-	margin:10px;
-}
-
-figure:nth-child(3n){
-	margin-right:0;
-}
-
-figcaption{
-	font-size:12pt;
-	color:#ae689e;
-	text-align:center;
-	filter:drop-shadow(0px 0px 10px black);
-}
-.clearfix::after{
-	content:"";
-	display:table;
-	clear:both;
-}
-footer{
-	/*width:1000px;*/
-	min-height:85px;
-	padding:5px 100px;
-	border:1px solid #ae689e;
-	box-shadow: 0 0 5px 5px #DCDCDC;
-	background-color:#8b8a8b;
-	font-size:10pt;
-}
-
-.about{
-	display:block;
-	float:left;
-	color:#814c75;
-}
-footer p{
-	padding-top:10px;
-}
-footer p:nth-child(2){
-	border-top:1px solid black;
-	text-align:center;
-	
-}
-
-/*.footer-nav-bar{
-	margin:0;
-	display:block;
-	float:right;
-	margin-right:100px;
-}*/
-
-.service h2,
-.about_contacts h2{
-	margin:0;
-	padding:0;
-	font-size:14pt;
-	color:#ae689e;
-	padding: 15px 10px;
-	text-align:center;
-	border-bottom:2px solid silver;
-}
-
-.service p,
-.contact p{
-	margin:0;
-	padding:0;
-	font-size:12pt;
-	color:#8b8a8b;
-	padding:10px 10px;
-}
-
-.service ul{
-	margin:0;
-	padding:0;
-	font-size:12pt;
-	color:black;
-	padding:10px 30px;
-}
-
-.to_up{
+.navbar-header img{
 	width:50px;
-	height:50px;
-	background-image:linear-gradient(#d4d1d3,#a5a3a4);
-	position:fixed;
-	bottom:50px;
-	right:30px;
-	border-radius:50%;
-	text-align:center;
-	vertical-align:middle;
-	line-height:3;
 }
 
-.share {
-	width:300px;
-    margin:0;
-	display:block;
-	float:right;
-	margin-right:10px;
-	margin-top:30px;
-	color:#8b8a8b;
+.weather-panel .temp {
+    font-size: 5.9vw;
+    margin: 0px;
+    line-height: 60px;
 }
-.share  a{
-	color:#8b8a8b;
-}
-.share b {
-    margin-right: 15px;
-    font-weight: normal;
-    text-transform: uppercase;
-    color: black;
-}
-
-.social {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    vertical-align: middle;
-	text-align:center;
-}
-
-.social-vk {
-    background-color: #6d8fb3;
-}
-
-.social-fb {
-    background-color: #526da3;
-}
-
-.social-tw {
-    background-color: #73bfe6;
-}
-/*for reviews*/
-
-.comment {
-    position: relative;
-    margin-top: 30px; 
-    margin-right: 20px;
-    margin-left: 50px;
-	padding-bottom:50px;
-	border-bottom:1px solid black;
-	font-size:12pt;
-}
-
-.comment-avatar {
-    position: absolute;
-    top: 0;
-    left: -40px;
-    width: 70px;
-    height: 70px;
-    background: #7f8c8c url("images/avatar.png") no-repeat;
-	background-size:70px;
-}
-
-.comment-author {
-    margin-bottom: 5px;
-    padding-left: 45px;
-    padding-right: 20px;
-    font-weight: bold;
-}
-
-.comment-text {
-    padding: 12px;
-    padding-left: 45px;
-    background-color: #f8f8f8;
-    border-bottom: 5px solid #e5e6e6;
-}
-
-.comment-date {
-    margin-top: 5px;
-    font-size: 12px;
-    color: #bdc3c7;
-}
-
-.comment-reply {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 15px;
-    height: 15px;
-    background: url("/assets/course14/reply.png") no-repeat 0 0;
-}
-
-.contact{
-	width:900px;
-	display:flex;
-	justify-content: space-around;
-	margin-top:50px;	
-}
-
-.contact img{
-	border-radius:30px;
-	box-shadow:10px 0 5px 5px silver;
+.weather-panel .supersmall {
+    font-size: 9px;
+    margin-top: 0px;
+    }
+.wi {
+    font-size: 5.9vw;
+    }
+.weather-panel .col-sm-6 {
+    text-align: center;
+    }
 	
+ #custom-search-form {
+        margin:0;
+        margin-top: 5px;
+        padding: 0;
+    }
+ 
+#custom-search-form .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+ 
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-transition: width  0.2s ease-in-out;
+    -moz-transition:width  0.2s ease-in-out;
+    -o-transition: width  0.2s ease-in-out;
+    transition: width  0.2s ease-in-out;
+    }
+ 
+#custom-search-form button {
+        border: 0;
+        background: none;
+        /** belows styles are working good */
+        padding: 2px 5px;
+        margin-top: 2px;
+        position: relative;
+        left: -28px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+ 
+.search-query:focus + button {
+        z-index: 3;   
+    }   
+.search-query:focus{
+        width: 260px;
+    }   
+
+
+
+@keyframes move {
+    to {
+        right: 50px;
+    }
 }
+
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+.bg-lightgray
+{
+    background-color:LightGray;
+}
+
+#Layer_1{
+	width:100px;
+	margin:auto;
+	animation-name:move;
+	animation-duration:50s;
+}
+
+
+
