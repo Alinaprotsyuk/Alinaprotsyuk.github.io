@@ -22,21 +22,24 @@ function getFibonacciSequence(numberOfElements) {
 }*/
 
 function getFibonacciSequence(numberOfElements) {
-	var a = [];
-	a[0] = 0;
-	a[1] = 1;
-	for (var i = 0; i <= numberOfElements; i++) {
-		a[i] = a[i-1] + a[i-2];
-		document.write(i,' ');
-		document.write(a[i], ', ');
-		
+ var a = [];
+ a[0] = 0;
+ a[1] = 1;
+ for (var i = 2; i <= numberOfElements; i++) {
+  a[i] = a[i-1] + a[i-2];
+  /*document.write(i,' ');
+  document.write(a[i], ', ');*/
+  var s = document.getElementsByTagName('span');
+  s[i].innerHTML= a[i];
+  
  }
 }
-var btn = getElementsByTagName('button');
 
-btn.addEventListener('click',function(e){
-	var numberOfElements = n.value;
-	getFibonacciSequence(numberOfElements);
-	e.preventDefault();
-})
+
+var b = document.getElementById('btn');
+b.addEventListener('click',function(e){
+ var numberOfElements = parseInt(n.value);
+ getFibonacciSequence(numberOfElements);
+ e.preventDefault();
+},false);
 
