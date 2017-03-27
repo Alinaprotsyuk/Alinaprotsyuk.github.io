@@ -19,7 +19,7 @@
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<!--<a class="navbar-brand" href="#">Погода України</a>-->
-						<img src="images/label.png" alt="" width="50px" height="50px">
+						<img src="../images/label.png" alt="" width="50px" height="50px">
 					</div>
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="../index.html">Погода України</a></li>
@@ -105,7 +105,7 @@
 
 					<!-- Wrapper for slides -->
 						<div class="carousel-inner" role="listbox">
-							<div class="item active">
+							<div class="item active" id="slide1">
 								<img src="../images/8.jpg" alt="..." style="margin: auto;">
 								<div class="carousel-caption">
 									<h3>Погода в Україні</h3>
@@ -145,27 +145,56 @@
 	<div class="panel-body">
 		<div class="container">
 		<div class="well">
-			<h3>Погода в місті - <span></span></h3>
+			<h3>Погода в місті - <span id="name-of-city"></span></h3>
 		</div>
 				<div class="row">
-					<div class="col-xs-5 col-sm-6 col-lg-4">
-						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 420 420" style="enable-background:new 0 0 420 420;" xml:space="preserve" class="center-block"
-	 >
-<g>
-	<polygon style="fill:#F5C525;" points="420,210 375.774,247.857 399.238,301.145 342.926,315.986 340.945,374.184 283.764,363.211 
-		256.724,414.779 210,380 163.276,414.779 136.236,363.211 79.055,374.184 77.073,315.986 20.762,301.144 44.226,247.858 0,210 
-		44.226,172.143 20.762,118.855 77.074,104.014 79.055,45.816 136.236,56.789 163.276,5.221 210,40 256.723,5.221 283.764,56.789 
-		340.945,45.816 342.927,104.014 399.238,118.856 375.774,172.142 	"/>
-	<circle style="fill:#F8A805;" cx="210" cy="210" r="140"/>
+					<div class="col-xs-5 col-sm-6 col-lg-4 ">
+						<!--<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 420 420" style="enable-background:new 0 0 420 420;" xml:space="preserve" class="center-block">
+							<g>
+								<polygon style="fill:#F5C525;" points="420,210 375.774,247.857 399.238,301.145 342.926,315.986 340.945,374.184 283.764,363.211 
+								256.724,414.779 210,380 163.276,414.779 136.236,363.211 79.055,374.184 77.073,315.986 20.762,301.144 44.226,247.858 0,210 
+								44.226,172.143 20.762,118.855 77.074,104.014 79.055,45.816 136.236,56.789 163.276,5.221 210,40 256.723,5.221 283.764,56.789 
+								340.945,45.816 342.927,104.014 399.238,118.856 375.774,172.142 	"/>
+								<circle style="fill:#F8A805;" cx="210" cy="210" r="140"/>-->
+						<div class="slide-animation">
+							<div class="circle"></div>
+							<div class="circle"></div>
+							<div class="circle"></div>
+							<div class="circle"></div>
+							<div class="circle"></div>
+							<div class="circle"></div>
+							<div class="circle"></div>
+							<div class="circle"></div>
+							<div class="circle"></div>
+							<div class="circle"></div>
+							<div class="circle"></div>
+						</div>
 					</div>
 					<div class="col-xs-7 col-sm-6 col-lg-8">
 	<!-- Toggleable / Dynamic Tabs -->
 						<ul class="nav nav-tabs nav-justified">
-							<li class="active"><a data-toggle="tab" href="#home">Погода на сьогодні</a></li>
-							<li><a data-toggle="tab" href="#menu1">Погода на завтра</a></li>
-							<li><a data-toggle="tab" href="#menu2">Погода через два дні</a></li>
-							<li><a data-toggle="tab" href="#menu3">Погода через три дні</a></li>
+							<li class="active">
+								<a data-toggle="tab" href="#home">Погода на сьогодні
+								<img src="../images/large/01.png" alt="" class="text-center">
+								</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#menu1">Погода на завтра
+								<img src="../images/large/02.png" alt="" class="text-center">
+								</a>
+								
+							</li>
+							<li>
+								<a data-toggle="tab" href="#menu2">Погода через два дні
+								<img src="../images/large/03.png" alt="" class="text-center">
+								</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#menu3">Погода через три дні
+								<img src="../images/large/01.png" alt="" class="text-center">
+								</a>
+							</li>
 						</ul>
 						<div class="tab-content">
 							<div id="home" class="tab-pane fade in active">
@@ -269,13 +298,20 @@
 	</div>
 	
 	<footer class="container-fluid text-center bg-lightgray">
-
-        <div class="copyrights" style="margin-top:25px;">
+		<img src="../images/footer_foto.jpg" alt="">
+        <div class="copyrights">
             <p>Ukraine &copy; 2017, All Rights Reserved
                 <br>
-                <span>Web Design By: Alina Protsyuk</span></p>
+                <span>Web Design By: Alina Protsyuk</span>
+			</p>
             <p><a href="https://vk.com/id28893945" target="_blank">Linkedin <i class="fa fa-linkedin-square" aria-hidden="true"></i> </a></p>
         </div>
+		<div class="social">
+            <b>Соцмережі</b>
+            <a class="social social-vk" href="https://vk.com"><i class="fa fa-vk fa-2x" aria-hidden="true" ></i></a>
+            <a class="social social-fb" href="https://www.facebook.com"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+            <a class="social social-tw" href="http://twitter.com"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+		</div>
 	</footer>
 	
 	</div>
