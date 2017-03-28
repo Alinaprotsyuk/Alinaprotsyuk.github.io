@@ -1,10 +1,20 @@
-#ukraine img{
-	width:500px;
-}
-
 .navbar-header img{
 	width:50px;
 }
+
+#slide1{
+	filter:brightness(3);
+}
+
+#slide2{
+	filter:grayscale(1);
+}
+
+.navbar-form a{
+	margin:10px;
+}
+
+/*Wheter sector*/
 
 .weather-panel .temp {
     font-size: 5.9vw;
@@ -25,59 +35,61 @@
 . carousel-inner #slide1{
 	filter: grayscale(50%);
 }
+
+/*Search form*/
 	
- /*#custom-search-form {
-        margin:0;
-        margin-top: 5px;
-        padding: 0;
-    }
- 
-#custom-search-form .search-query {
-        padding-right: 3px;
-        padding-right: 4px \9;
-        padding-left: 3px;
-        padding-left: 4px \9
-        /* IE7-8 doesn't have border-radius, so don't indent the padding 
-
-        margin-bottom: 0;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-        -webkit-transition: width  0.2s ease-in-out;
-    -moz-transition:width  0.2s ease-in-out;
-    -o-transition: width  0.2s ease-in-out;
-    transition: width  0.2s ease-in-out;
-    }
- 
-#custom-search-form button {
-        border: 0;
-        background: none;
-        /** belows styles are working good 
-        padding: 2px 5px;
-        margin-top: 2px;
-        position: relative;
-        left: -28px;
-        /* IE7-8 doesn't have border-radius, so don't indent the padding 
-        margin-bottom: 0;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-    }
- 
-.search-query:focus + button {
-        z-index: 3;   
-    }   
-.search-query:focus{
-        width: 260px;
-    }   
-*/
-
-
-@keyframes move {
-    to {
-        right: 50px;
-    }
+.search-form .form-group {
+	float: right !important;
+	transition: all 0.35s, border-radius 0s;
+	width: 32px;
+	height: 32px;
+	background-color: #fff;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	border-radius: 25px;
+	border: 1px solid #ccc;
 }
+.search-form .form-group input.form-control {
+	padding-right: 20px;
+	border: 0 none;
+	background: transparent;
+	box-shadow: none;
+	display:block;
+}
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+	display: none;
+}
+.search-form .form-group input.form-control:-moz-placeholder {
+	/* Firefox 18- */
+	display: none;
+}
+.search-form .form-group input.form-control::-moz-placeholder {
+	/* Firefox 19+ */
+	display: none;
+}
+.search-form .form-group input.form-control:-ms-input-placeholder {
+	display: none;
+}
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+	width: 100%;
+	border-radius: 4px 25px 25px 4px;
+}
+.search-form .form-group span.form-control-feedback {
+	position: absolute;
+	top: -1px;
+	right: -2px;
+	z-index: 2;
+	display: block;
+	width: 34px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	color: #3596e0;
+	left: initial;
+	font-size: 14px;
+}
+
+/*Footer*/
 
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 .bg-lightgray
@@ -89,6 +101,8 @@ footer img{
 	width:100px;
 	margin-top:25px;
 	margin-left:50px;
+	transform:rotate(-20deg);
+	box-shadow: 0 0 5px 5px grey; 
 }
 
 footer div{
@@ -98,34 +112,31 @@ footer div{
 	text-align:left;
 }
 
+.share{
+	float:right;
+	margin-top:25px;
+}
+
+.share b{
+	margin-right:30px;
+}
+
 .social {
 	float:right;
-	display: inline;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    vertical-align: middle;
-	text-align:center;
+	display:inline-block;
+	width:40px;
+	height:40px;
+	margin-right:10px;
+	color:grey;
+	border: 1px solid grey;
+	box-shadow: 0px 0px 5px 5px white;
 }
 
-.social-vk {
-    background-color: #6d8fb3;
+.social:hover {
+	box-shadow: 0px 0px 5px 5px grey;
 }
 
-.social-fb {
-    background-color: #526da3;
-}
-
-.social-tw {
-    background-color: #73bfe6;
-}
-
-#Layer_1{
-	width:100px;
-	margin:auto;
-	animation-name:move;
-	animation-duration:50s;
-}
+/*Animation sector*/
 
 .slide-animation{
 	background:lightgrey;
@@ -145,107 +156,107 @@ footer div{
 }
 .circle:nth-of-type(even) { 
 	background: pink; /* For browsers that do not support gradients */
-	background: -webkit-radial-gradient(#9A2EFE,#00FFFF, #FE2EF7); /* Safari 5.1 to 6.0 */
-	background: -o-radial-gradient(#9A2EFE,#00FFFF, #FE2EF7); /* For Opera 11.6 to 12.0 */
-	background: -moz-radial-gradient(#9A2EFE,#00FFFF, #FE2EF7); /* For Firefox 3.6 to 15 */
-	background: radial-gradient(#9A2EFE, #00FFFF,#FE2EF7); /* Standard syntax */
+	background: -webkit-radial-gradient(lightblue,white,grey); /* Safari 5.1 to 6.0 */
+	background: -o-radial-gradient(lightblue,white,grey); /* For Opera 11.6 to 12.0 */
+	background: -moz-radial-gradient(lightblue,white,grey); /* For Firefox 3.6 to 15 */
+	background: radial-gradient(lightblue,white,grey); /* Standard syntax */
 }
 .circle:nth-of-type(11) {
-  height:10px; 
-  width:10px;
-  margin-top:5px; 
-  /*margin-left:5px;*/
-  -webkit-animation:slide 3s ease-in-out infinite;
-  animation:slide 3s ease-in-out infinite;
+	height:10px; 
+	width:10px;
+	margin-top:5px; 
+	/*margin-left:5px;*/
+	-webkit-animation:slide 3s ease-in-out infinite;
+	animation:slide 3s ease-in-out infinite;
 }
 .circle:nth-of-type(10) {
-  height:20px; 
-  width:20px;
-  margin-top:12px; 
-  /*margin-left:12px;*/
-  -webkit-animation:slide 3s -2.7s ease-in-out infinite;
-  animation:slide 3s -2.7s ease-in-out infinite;
+	height:20px; 
+	width:20px;
+	margin-top:12px; 
+	/*margin-left:12px;*/
+	-webkit-animation:slide 3s -2.7s ease-in-out infinite;
+	animation:slide 3s -2.7s ease-in-out infinite;
 }
 .circle:nth-of-type(9) {
-  height:40px; 
-  width:40px;
-  margin-top:20px;
-  /*margin-left:20px;*/
-  -webkit-animation:slide 3s -2.4s ease-in-out infinite;
-  animation:slide 3s -2.4s ease-in-out infinite;
+	height:40px; 
+	width:40px;
+	margin-top:20px;
+	/*margin-left:20px;*/
+	-webkit-animation:slide 3s -2.4s ease-in-out infinite;
+	animation:slide 3s -2.4s ease-in-out infinite;
 }
 .circle:nth-of-type(8) {
-  height:60px; 
-  width:60px;
-  margin-top:32px; 
-  /*margin-left:32px;*/
-  -webkit-animation:slide 3s -2.1s ease-in-out infinite;
-  animation:slide 3s -2.1s ease-in-out infinite;
+	height:60px; 
+	width:60px;
+	margin-top:32px; 
+	/*margin-left:32px;*/
+	-webkit-animation:slide 3s -2.1s ease-in-out infinite;
+	animation:slide 3s -2.1s ease-in-out infinite;
 }
 .circle:nth-of-type(7) {
-  height:80px; 
-  width:80px;
-  margin-top:40px; 
-  /*margin-left:40px;*/
-  -webkit-animation:slide 3s -1.8s ease-in-out infinite;
-  animation:slide 3s -1.8s ease-in-out infinite;
+	height:80px; 
+	width:80px;
+	margin-top:40px; 
+	/*margin-left:40px;*/
+	-webkit-animation:slide 3s -1.8s ease-in-out infinite;
+	animation:slide 3s -1.8s ease-in-out infinite;
 }
 .circle:nth-of-type(6) {
-  height:100px; 
-  width:100px;
-  margin-top:52px; 
-  /*margin-left:52px;*/
-  -webkit-animation:slide 3s -1.5s ease-in-out infinite;
-  animation:slide 3s -1.5s ease-in-out infinite;
+	height:100px; 
+	width:100px;
+	margin-top:52px; 
+	/*margin-left:52px;*/
+	-webkit-animation:slide 3s -1.5s ease-in-out infinite;
+	animation:slide 3s -1.5s ease-in-out infinite;
 }
 .circle:nth-of-type(5) {
-  height:120px; 
-  width:120px;
-  margin-top:60px; 
-  /*margin-left:60px;*/
-  -webkit-animation:slide 3s -1.2s ease-in-out infinite;
-  animation:slide 3s -1.2s ease-in-out infinite;
+	height:120px; 
+	width:120px;
+	margin-top:60px; 
+	/*margin-left:60px;*/
+	-webkit-animation:slide 3s -1.2s ease-in-out infinite;
+	animation:slide 3s -1.2s ease-in-out infinite;
 }
 .circle:nth-of-type(4) {
-  height:140px; 
-  width:140px;
-  margin-top:72px; 
-  /*margin-left:72px;*/
-  -webkit-animation:slide 3s -0.9s ease-in-out infinite;
-  animation:slide 3s -0.9s ease-in-out infinite;
+	height:140px; 
+	width:140px;
+	margin-top:72px; 
+	/*margin-left:72px;*/
+	-webkit-animation:slide 3s -0.9s ease-in-out infinite;
+	animation:slide 3s -0.9s ease-in-out infinite;
 }
 .circle:nth-of-type(3) {
-  height:160px; 
-  width:160px;
-  margin-top:80px; 
-  /*margin-left:80px;*/
-  -webkit-animation:slide 3s -0.6s ease-in-out infinite;
-  animation:slide 3s -0.6s ease-in-out infinite;
+	height:160px; 
+	width:160px;
+	margin-top:80px; 
+	/*margin-left:80px;*/
+	-webkit-animation:slide 3s -0.6s ease-in-out infinite;
+	animation:slide 3s -0.6s ease-in-out infinite;
 }
 .circle:nth-of-type(2) {
-  height:180px; 
-  width:180px;
-  margin-top:92px;
-  /*margin-left:92px;*/
-  -webkit-animation:slide 3s -0.3s ease-in-out infinite;
-  animation:slide 3s -0.3s ease-in-out infinite;
+	height:180px; 
+	width:180px;
+	margin-top:92px;
+	/*margin-left:92px;*/
+	-webkit-animation:slide 3s -0.3s ease-in-out infinite;
+	animation:slide 3s -0.3s ease-in-out infinite;
 }
 .circle:nth-of-type(1) {
-  height:200px;
-  width:200px;
-  margin-top:100px; 
-  /*margin-left:100px;*/
-  -webkit-animation:slide 3s ease-in-out infinite;
-  animation:slide 3s ease-in-out infinite;
+	height:200px;
+	width:200px;
+	margin-top:100px; 
+	/*margin-left:100px;*/
+	-webkit-animation:slide 3s ease-in-out infinite;
+	animation:slide 3s ease-in-out infinite;
 }
 @keyframes slide {
-  0% { left:75% }
-  50% { left:25%; }
-  100% { left:75%; }
+	0% { left:75% }
+	50% { left:25%; }
+	100% { left:75%; }
 }
 @-webkit-keyframes slide {
-  0% { left:75% }
-  50% { left:25%; }
-  100% { left:75%; }
+	0% { left:75% }
+	50% { left:25%; }
+	100% { left:75%; }
 }
 
