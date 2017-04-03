@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  <script src="weather.js"></script>
   <script src="javascript.js"></script>
-  <script src="script.js"></script>
 </head>
 <body>
 	<header>
@@ -28,14 +29,14 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="pages/cities.html" class="city" name="Івано-Франківськ">Івано-Франківськ</a></li>
-								<li><a href="pages/cities.html">Львів</a></li>
-								<li><a href="pages/cities.html">Луцьк</a></li>
-								<li><a href="pages/cities.html">Рівне</a></li>
-								<li><a href="pages/cities.html">Тернопіль</a></li>
-								<li><a href="pages/cities.html">Хмельницький</a></li>
-								<li><a href="pages/cities.html">Чернівці</a></li>
-								<li><a href="pages/cities.html">Ужгород</a></li>
+								<li><a href="#" id="IVFR">Івано-Франківськ</a></li>
+								<li><a href="#" id="LV">Львів</a></li>
+								<li><a href="#" id="LK">Луцьк</a></li>
+								<li><a href="#" id="RV">Рівне</a></li>
+								<li><a href="#" id="TR">Тернопіль</a></li>
+								<li><a href="#" id="HM">Хмельницький</a></li>
+								<li><a href="#" id="CHR">Чернівці</a></li>
+								<li><a href="#" id="YSH">Ужгород</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -43,10 +44,10 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="pages/cities.html">Житомир</a></li>
-								<li><a href="pages/cities.html">Київ</a></li>
-								<li><a href="pages/cities.html">Суми</a></li>
-								<li><a href="pages/cities.html">Чернігів</a></li>
+								<li><a href="#">Житомир</a></li>
+								<li><a href="#">Київ</a></li>
+								<li><a href="#">Суми</a></li>
+								<li><a href="#">Чернігів</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -54,10 +55,10 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="pages/cities.html">Вінниця</a></li>
-								<li><a href="pages/cities.html">Кропивницький</a></li>
-								<li><a href="pages/cities.html">Полтава</a></li>
-								<li><a href="pages/cities.html">Черкаси</a></li>
+								<li><a href="#">Вінниця</a></li>
+								<li><a href="#">Кропивницький</a></li>
+								<li><a href="#">Полтава</a></li>
+								<li><a href="#">Черкаси</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -65,9 +66,9 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="pages/cities.html">Дніпро</a></li>
-								<li><a href="pages/cities.html">Запоріжжя</a></li>
-								<li><a href="pages/cities.html">Харків</a></li>
+								<li><a href="#">Дніпро</a></li>
+								<li><a href="#">Запоріжжя</a></li>
+								<li><a href="#">Харків</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -75,9 +76,9 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="pages/MK.html">Миколаїв</a></li>
-								<li><a href="pages/OD.html">Одеса</a></li>
-								<li><a href="pages/HR.html">Херсон</a></li>
+								<li><a href="#">Миколаїв</a></li>
+								<li><a href="#">Одеса</a></li>
+								<li><a href="#">Херсон</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -142,62 +143,68 @@
 </div>
 </div>
 </header>
+
+
 <main>
 <div class="container">
 	<div class="row">
-	    <div class="col-md-9">
-			<div class="panel panel-default">
+	    <div class="col-xs-0 col-md-9">
+			<div class="panel panel-default animation_sun">
 				<div class="panel-body">
-					<img src="images/ukraine.jpg" alt=""  width="100%">					
+					<div class="map">
+						<div class="airplane">
+							<img src="images/sun.svg" alt="">
+						</div>
+					</div>				
 				</div>
 			</div>
 		</div>
-        <div class="col-md-3">
+        <div class="col-xs-12 col-md-3">
+		
 			<div class="panel panel-default weather-panel">
-                <div class="panel-heading">Поточна погода<br><small id="currentTime" class="supersmall"></small></div>
+                <div class="panel-heading">Поточна погода в <span id="cityName"></span><br>
+					<small id="currentTime" class="supersmall"></small>
+				</div>
                 <div class="row">
-                    <div class="col-sm-6 wi" id="currentIcon"></div>
+                    <div class="col-sm-6"></div>
                     <div class="col-sm-6" style="padding: 0px;">
-                        <h1 class="temp"><span id="currentTemperature"></span><span>°</span></h1>
-                        <small id="currentSummary"></small>
+                        <h1 class="temp" id="currentTemperature"></h1>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12"><span></span><br>
-                        <span>wind: </span><span id="currentWind"></span><span> mph(s)</span><br>
-                        <span id="hourlySummary"></span>
+                    <div class="col-sm-12">
+                        <span id="currentWind"></span><br>
+                        <span id="currentPressure"></span><br>
+						<span id="currentHumidity"></span>
                     </div>
                 </div>
 			</div>
-				<div class="row">
-                    <div class="col-sm-12"><span></span><br>
-                        <form action="" class="search-form">
-							<div class="form-group has-feedback">
-								<!--<label for="search" class="sr-only">Search</label>-->
-								<input type="text" class="form-control" name="search" id="search" placeholder="search">
-								<span class="glyphicon glyphicon-search form-control-feedback"></span>
-							</div>
-						</form>
-                    </div>
-                </div>
+			
+			
+				
 		</div>
-	</div>		
+	</div>	
+</div>	
 </main>
+
+
 	<footer class="container-fluid text-center bg-lightgray">
-		<img src="images/footer_foto.jpg" alt="">
-        <div class="copyrights">
-            <p>Ukraine &copy; 2017, All Rights Reserved
+		<div class="col-xs-12 col-md-8 copyrights">
+			<img src="images/footer_foto.jpg" alt="" class="pull-left">
+            <p class="pull-left">Ukraine &copy; 2017, All Rights Reserved
                 <br>
                 <span>Web Design By: Alina Protsyuk</span>
+				<br>
+			    <a href="https://vk.com/id28893945" target="_blank">Linkedin 
+					<i class="fa fa-linkedin-square" aria-hidden="true"></i> 
+				</a>
 			</p>
-            <p><a href="https://vk.com/id28893945" target="_blank">Linkedin <i class="fa fa-linkedin-square" aria-hidden="true"></i> </a></p>
         </div>
-		<aside class="share">
-            <b>Share:</b>
-            <a class="social social-vk" href="https://vk.com"><i class="fa fa-vk fa-2x" aria-hidden="true" ></i></a>
-            <a class="social social-fb" href="https://www.facebook.com"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
-            <a class="social social-tw" href="http://twitter.com"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
-		</aside>
+		<div class="col-xs-6 col-md-4">
+			<a class="social pull-right" href="http://twitter.com"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+			<a class="social pull-right" href="https://www.facebook.com"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+			<a class="social pull-right" href="https://vk.com"><i class="fa fa-vk fa-2x" aria-hidden="true" ></i></a>
+		</div>
 	</footer>
 	</div>
 	</div>

@@ -17,246 +17,105 @@
 /*Wheter sector*/
 
 .weather-panel .temp {
-    font-size: 5.9vw;
+    font-size: 100px;
     margin: 0px;
-    line-height: 60px;
+    line-height: 100px;
 }
+
 .weather-panel .supersmall {
     font-size: 9px;
     margin-top: 0px;
-    }
-.wi {
-    font-size: 5.9vw;
-    }
+}
+
 .weather-panel .col-sm-6 {
     text-align: center;
-    }
+}
 	
-. carousel-inner #slide1{
-	filter: grayscale(50%);
-}
-
-/*Search form*/
-	
-.search-form .form-group {
-	float: right !important;
-	transition: all 0.35s, border-radius 0s;
-	width: 32px;
-	height: 32px;
-	background-color: #fff;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-	border-radius: 25px;
-	border: 1px solid #ccc;
-}
-.search-form .form-group input.form-control {
-	padding-right: 20px;
-	border: 0 none;
-	background: transparent;
-	box-shadow: none;
-	display:block;
-}
-.search-form .form-group input.form-control::-webkit-input-placeholder {
-	display: none;
-}
-.search-form .form-group input.form-control:-moz-placeholder {
-	/* Firefox 18- */
-	display: none;
-}
-.search-form .form-group input.form-control::-moz-placeholder {
-	/* Firefox 19+ */
-	display: none;
-}
-.search-form .form-group input.form-control:-ms-input-placeholder {
-	display: none;
-}
-.search-form .form-group:hover,
-.search-form .form-group.hover {
-	width: 100%;
-	border-radius: 4px 25px 25px 4px;
-}
-.search-form .form-group span.form-control-feedback {
-	position: absolute;
-	top: -1px;
-	right: -2px;
-	z-index: 2;
-	display: block;
-	width: 34px;
-	height: 34px;
-	line-height: 34px;
-	text-align: center;
-	color: #3596e0;
-	left: initial;
-	font-size: 14px;
-}
-
 /*Footer*/
 
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 .bg-lightgray
 {
     background-color:LightGray;
+	
 }
-footer img{
-	float:left;
-	width:100px;
+.copyrights img{
+	width:90px;
 	margin-top:25px;
 	margin-left:50px;
 	transform:rotate(-20deg);
 	box-shadow: 0 0 5px 5px grey; 
 }
 
-footer div{
-	float:left;
+.copyrights p{
 	margin-top:25px;
 	margin-left:50px;
-	text-align:left;
+	text-align: left;
 }
 
-.share{
-	float:right;
+.social {	
 	margin-top:25px;
-}
-
-.share b{
-	margin-right:30px;
-}
-
-.social {
-	float:right;
-	display:inline-block;
 	width:40px;
 	height:40px;
 	margin-right:10px;
 	color:grey;
 	border: 1px solid grey;
-	box-shadow: 0px 0px 5px 5px white;
+	box-shadow: 0px 0px 2px 2px white;
 }
 
 .social:hover {
 	box-shadow: 0px 0px 5px 5px grey;
 }
 
-/*Animation sector*/
-
-.slide-animation{
-	background:lightgrey;
-	position:relative;
-}
-.circle{
-	border-radius:50%;
-	position:absolute;
-	top:50%; left:75%;
-}
-.circle:nth-of-type(odd) { 
-	background: red; /* For browsers that do not support gradients */
-	background: -webkit-radial-gradient(red, yellow, green); /* Safari 5.1 to 6.0 */
-	background: -o-radial-gradient(red, yellow, green); /* For Opera 11.6 to 12.0 */
-	background: -moz-radial-gradient(red, yellow, green); /* For Firefox 3.6 to 15 */
-	background: radial-gradient(red, yellow, green); /* Standard syntax */ 
-}
-.circle:nth-of-type(even) { 
-	background: pink; /* For browsers that do not support gradients */
-	background: -webkit-radial-gradient(lightblue,white,grey); /* Safari 5.1 to 6.0 */
-	background: -o-radial-gradient(lightblue,white,grey); /* For Opera 11.6 to 12.0 */
-	background: -moz-radial-gradient(lightblue,white,grey); /* For Firefox 3.6 to 15 */
-	background: radial-gradient(lightblue,white,grey); /* Standard syntax */
-}
-.circle:nth-of-type(11) {
-	height:10px; 
-	width:10px;
-	margin-top:5px; 
-	/*margin-left:5px;*/
-	-webkit-animation:slide 3s ease-in-out infinite;
-	animation:slide 3s ease-in-out infinite;
-}
-.circle:nth-of-type(10) {
-	height:20px; 
-	width:20px;
-	margin-top:12px; 
-	/*margin-left:12px;*/
-	-webkit-animation:slide 3s -2.7s ease-in-out infinite;
-	animation:slide 3s -2.7s ease-in-out infinite;
-}
-.circle:nth-of-type(9) {
-	height:40px; 
-	width:40px;
-	margin-top:20px;
-	/*margin-left:20px;*/
-	-webkit-animation:slide 3s -2.4s ease-in-out infinite;
-	animation:slide 3s -2.4s ease-in-out infinite;
-}
-.circle:nth-of-type(8) {
-	height:60px; 
-	width:60px;
-	margin-top:32px; 
-	/*margin-left:32px;*/
-	-webkit-animation:slide 3s -2.1s ease-in-out infinite;
-	animation:slide 3s -2.1s ease-in-out infinite;
-}
-.circle:nth-of-type(7) {
-	height:80px; 
-	width:80px;
-	margin-top:40px; 
-	/*margin-left:40px;*/
-	-webkit-animation:slide 3s -1.8s ease-in-out infinite;
-	animation:slide 3s -1.8s ease-in-out infinite;
-}
-.circle:nth-of-type(6) {
-	height:100px; 
-	width:100px;
-	margin-top:52px; 
-	/*margin-left:52px;*/
-	-webkit-animation:slide 3s -1.5s ease-in-out infinite;
-	animation:slide 3s -1.5s ease-in-out infinite;
-}
-.circle:nth-of-type(5) {
-	height:120px; 
-	width:120px;
-	margin-top:60px; 
-	/*margin-left:60px;*/
-	-webkit-animation:slide 3s -1.2s ease-in-out infinite;
-	animation:slide 3s -1.2s ease-in-out infinite;
-}
-.circle:nth-of-type(4) {
-	height:140px; 
-	width:140px;
-	margin-top:72px; 
-	/*margin-left:72px;*/
-	-webkit-animation:slide 3s -0.9s ease-in-out infinite;
-	animation:slide 3s -0.9s ease-in-out infinite;
-}
-.circle:nth-of-type(3) {
-	height:160px; 
-	width:160px;
-	margin-top:80px; 
-	/*margin-left:80px;*/
-	-webkit-animation:slide 3s -0.6s ease-in-out infinite;
-	animation:slide 3s -0.6s ease-in-out infinite;
-}
-.circle:nth-of-type(2) {
-	height:180px; 
-	width:180px;
-	margin-top:92px;
-	/*margin-left:92px;*/
-	-webkit-animation:slide 3s -0.3s ease-in-out infinite;
-	animation:slide 3s -0.3s ease-in-out infinite;
-}
-.circle:nth-of-type(1) {
-	height:200px;
-	width:200px;
-	margin-top:100px; 
-	/*margin-left:100px;*/
-	-webkit-animation:slide 3s ease-in-out infinite;
-	animation:slide 3s ease-in-out infinite;
-}
-@keyframes slide {
-	0% { left:75% }
-	50% { left:25%; }
-	100% { left:75%; }
-}
-@-webkit-keyframes slide {
-	0% { left:75% }
-	50% { left:25%; }
-	100% { left:75%; }
+/*Animation*/
+.map {
+	position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    height: 675px;
+    margin: 0 auto;
+    background:url("https://s12.postimg.org/e05ecqmhp/0rn_Bl_croper_ru.jpg") no-repeat center;
+    background-size: cover;
 }
 
+.airplane img{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: fly 5s infinite linear;
+}
+
+		
+@keyframes fly {
+    0% {
+                
+		transform: translate(0, 0);
+        }
+	25% {
+                
+		transform: translate(204px, 169px);
+		
+        }
+		
+    50% {
+        transform: translate(407px, 337px) scale(2);
+		
+        }
+			
+	75% {
+        transform: translate(611px, 506px);
+		
+        }
+			
+	100% {
+        transform: translate(815px, 675px);
+		
+        }
+}
+		
+@media screen and (max-device-width: 767px) {
+    .animation_sun{
+		display:none;
+	}
+}
+		
