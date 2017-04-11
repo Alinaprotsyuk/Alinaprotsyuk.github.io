@@ -1,93 +1,78 @@
-$(document).ready(function(){
-	getWeather("707471");
-});
-		
-$("#IVFR").on("click", function(){
-	getWeather("707471");
-});
+var tempMode = 1;
 
-$("#LV").on("click", function(){
-	getWeather("702550");
-});
 
-$("#LK").on("click", function(){
-	getWeather("702569");
-});
 
-$("#RV").on("click", function(){
-	getWeather("695594");
-});
+function getWeather(lat, lon) {
+  var apiURI = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=06170c100199dbae1e223cc3dfad960b";
 
-$("#TR").on("click", function(){
-	getWeather("691650");
-});
+  $.ajax({
+    url: apiURI,
+    dataType: "json",
+    type: "GET",
+    async: "false",
+    success: function(resp) {
 
-$("#HM").on("click", function(){
-	getWeather("706369");
-});
-		
-$("#CHR").on("click", function(){
-	getWeather("710719");
-});
-
-$("#YSH").on("click", function(){
-	getWeather("690548");
-});
-		
-function getWeather(city) {
-	var URL = "http://api.openweathermap.org/data/2.5/weather?id=";
-			var API_KEY = "1e838668ac1b0a52e51b5364dd4b82bd";
-			var FULL_URL = URL + city + "&APPID=" + API_KEY;
-            var data;
-			if (city === "707471") {
-				$('#cityName').append("<b>Івано-Франківську</b>");
-			}
-			if (city === "702550") {
-				$('#cityName').append("<b>Львів</b>");
-			}
-			if (city === "702569") {
-				$('#cityName').append("<b>Луцьк</b>");
-			}
-			if (city === "695594") {
-				$('#cityName').append("<b>Рівне</b>");
-			}
-			if (city === "691650") {
-				$('#cityName').append("<b>Тернопіль</b>");
-			}
-			if (city === "706369") {
-				$('#cityName').append("<b>Хмельницький</b>");
-			}
-			if (city === "710719") {
-				$('#cityName').append("<b>Чернівці</b>");
-			}
-			if (city === "690548") {
-				$('#cityName').append("<b>Ужгород</b>");
-			}
-			if (city === "702550") {
-				$('#cityName').append("<b>Львів</b>");
-			}
-			if (city === "702550") {
-				$('#cityName').append("<b>Львів</b>");
-			}
-			if (city === "702550") {
-				$('#cityName').append("<b>Львів</b>");
-			}
-			if (city === "702550") {
-				$('#cityName').append("<b>Львів</b>");
-			}
-			$.ajax({
-			    type: "GET",
-			    url: FULL_URL,
-			    dataType: "json",
-			    success: function(data){
-					$("#currentTemperature").append("span").html(Math.floor(data.main.temp - 273.15) + "<sup>o</sup>");
-					$("#currentWind").append("span").html("Вітер: " + data.wind.speed  + "<span>м/с</span>" + " зі швидкість: " + data.wind.deg + "<sup>o</sup>");
-					$("#currentPressure").append("span").html("Тиск: " + data.main.pressure + "hPa");
-					$("#currentHumidity").append("span").html("Вологість: " + data.main.humidity + "%");
-			  	},
-			  	error: function() {
-			    	alert("An error occurred");
-			  	}
-			});
-	
+      $("#tempMode").on("click", function() {
+        if (this.checked) {
+          $("#temp-text").html(cels.toFixed(1) + " C&deg");
+          console.log("checked");
+        } else
+          $("#temp-text").html(fahr.toFixed(0) + " F&deg");
+      });
+      console.log(apiURI);
+      console.log(resp.name);
+      if (resp.name) {
+        $("#city-text").html(resp.name + ", " + resp.sys.country);
+      }
+      if (resp.wind) {
+        var knots = resp.wind.speed * 1.9438445;
+        $("#wind-text").html(knots.toFixed(1) + " Knots");
+      }
+      if (resp.main.temp) {
+        var fahr = (resp.main.temp * 9 / 5) - 459.67;
+        var cels = (resp.main.temp - 273.15);
+        if (cels > 24){ 
+          $("#temp-text").css("color", "red");
+        } else if (cels < 18){
+          $("#temp-text").css("color", "blue");
+        }
+        $("#temp-text").html((tempMode === 1 ? fahr.toFixed(0) + " F&deg" : cels.toFixed(0) + " C&deg"));
+      }
+      if (resp.weather) {
+        var imgURL = "http://openweathermap.org/img/w/" + resp.weather[0].icon + ".png";
+        console.log(imgURL)
+        $("#weatherImg").attr("src", imgURL);
+        $("#weather-text").html(resp.weather[0].description);
+      }   
+    },
+    error: function(resp) {
+       alert("Error: " + e);
+       clearInterval(updateinter);
+    }
+  });
 }
+
+function getLocation() {
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      getWeather(position.coords.latitude, position.coords.longitude);
+    })
+  } else {
+    alert("geolocation not available" + e);
+    clearInterval(updateinter);
+  }
+}
+var i = 0;
+var updateinter = setInterval(function(){
+  console.log("iteration# " + i++);
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      getWeather(position.coords.latitude, position.coords.longitude);
+    })
+  } else {
+    alert("geolocation not available" + e);
+  }
+}, 300000);
+
+
+getLocation();
